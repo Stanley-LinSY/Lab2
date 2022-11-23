@@ -1,3 +1,6 @@
+from statistics import median
+
+
 def display_main_menu():
     print("Enter some numbers separated by commas (e.g. 5, 67, 32)")
 
@@ -28,7 +31,18 @@ def calc_average(user_entered):
     return average
 
 
-display_main_menu()
-user_input = get_user_input()
-print("\nThe average is ", calc_average(user_input))
-print("\nThe min and max are: ", find_min_max(user_input))
+def calc_median(user_entered):
+    return median(user_entered)
+
+
+def main():
+    display_main_menu()
+    user_input = get_user_input()
+    print("\n", user_input)
+    print("\nThe average is ", calc_average(user_input))
+    print("\nThe min and max are: ", find_min_max(user_input))
+    print("\nThe median is ", calc_median(user_input))
+
+
+if __name__ == "__main__":
+    main()
